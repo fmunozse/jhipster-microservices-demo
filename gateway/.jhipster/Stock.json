@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "quantity",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171022194116",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "stock",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no",
+    "microserviceName": "portfolio",
+    "searchEngine": false
+}

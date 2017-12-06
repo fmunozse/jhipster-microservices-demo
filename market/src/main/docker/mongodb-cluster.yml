@@ -1,0 +1,16 @@
+version: '2'
+services:
+    market-mongodb:
+        image: mongo:3.4.8
+        ports:
+            - "27017:27017"
+        command: mongos --configdb market-mongodb-config
+    market-mongodb-node:
+        build:
+            context: .
+            dockerfile: mongodb/MongoDB.Dockerfile
+        command: mongod --replSet rs1 --noprealloc --smallfiles
+    market-mongodb-config:
+        image: mongo:3.4.8
+        container_name: market-mongodb-config
+        command: mongod --noprealloc --smallfiles --configsvr --dbpath /data/db
